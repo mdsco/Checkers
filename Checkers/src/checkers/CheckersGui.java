@@ -170,13 +170,13 @@ public class CheckersGui extends JPanel implements ActionListener{
 		g2.dispose();
 
 		if(checker == Checker.RED)
-		{ return new ImageIcon("RedChecker.png"); }
+		{ return new ImageIcon("images/RedChecker.png"); }
 		else if(checker == Checker.BLACK)
-		{ return new ImageIcon("BlackChecker.png"); }
+		{ return new ImageIcon("images/BlackChecker.png"); }
 		else if(checker == Checker.KINGRED)
-		{ return new ImageIcon("RedKing.png"); }
+		{ return new ImageIcon("images/RedKing.png"); }
 		else if(checker == Checker.KINGBLACK)
-		{ return new ImageIcon("BlackKing.png"); }		
+		{ return new ImageIcon("images/BlackKing.png"); }		
 
 		return new ImageIcon(img);
 	}
