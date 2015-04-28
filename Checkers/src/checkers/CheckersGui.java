@@ -36,7 +36,6 @@ public class CheckersGui extends JPanel implements ActionListener{
 	private static final Color LIGHT_COLOR = new Color(210, 180, 140);
 	private static final Color DARK_COLOR = new Color(107, 68, 35);
 
-	private static int playerColor = 0;
 	private static int computerColor = 0;
 
 	Evaluator eval;
@@ -124,8 +123,7 @@ public class CheckersGui extends JPanel implements ActionListener{
 			for(int j = 0; j < 8; j++){
 
 				if(matrix.returnBoard()[i][j] == 1){
-				  labelGrid[i][j]
-					.setIcon(checkerIconMap.get(Checker.BLACK));
+				  labelGrid[i][j].setIcon(checkerIconMap.get(Checker.BLACK));
 				  checkerGrid[i][j] = Checker.BLACK;
 				}
 				else if(matrix.returnBoard()[i][j] == 2){
@@ -133,18 +131,15 @@ public class CheckersGui extends JPanel implements ActionListener{
 				  checkerGrid[i][j] = Checker.RED;
 				}
 				else if(matrix.returnBoard()[i][j] == 3){
-				  labelGrid[i][j]
-					.setIcon(checkerIconMap.get(Checker.KINGBLACK));
+				  labelGrid[i][j].setIcon(checkerIconMap.get(Checker.KINGBLACK));
 				  checkerGrid[i][j] = Checker.KINGBLACK;
 				}
 				else if(matrix.returnBoard()[i][j] == 4){
-				  labelGrid[i][j]
-					.setIcon(checkerIconMap.get(Checker.KINGRED));
+				  labelGrid[i][j].setIcon(checkerIconMap.get(Checker.KINGRED));
 				  checkerGrid[i][j] = Checker.KINGRED;
 				}
 				else{
-				  labelGrid[i][j]
-					.setIcon(checkerIconMap.get(Checker.EMPTY));
+				  labelGrid[i][j].setIcon(checkerIconMap.get(Checker.EMPTY));
 				  checkerGrid[i][j] = Checker.EMPTY;
 				}
 			}
@@ -191,19 +186,10 @@ public class CheckersGui extends JPanel implements ActionListener{
 
 		private Checker selectedChecker = null;
 		private JPanel glassPane = null;
-		private Point p = null;/**
-		package checkers;
+		private Point p = null;
+		
 
-		/**
-		 * @author mike
-		 *
-		 */
-		public class Rules {
-
-		}
-
-		private JLabel movingLabel 
-			= new JLabel(checkerIconMap.get(Checker.EMPTY));
+		private JLabel movingLabel = new JLabel(checkerIconMap.get(Checker.EMPTY));
 
 		public MyMouseAdapter() {
 
@@ -359,7 +345,6 @@ public class CheckersGui extends JPanel implements ActionListener{
 
 		if (e.getActionCommand().equals("Red")){
 
-			playerColor = 2;
 			computerColor = 1;
 			matrix = new Rules(2);
 			createPieces();
@@ -370,7 +355,6 @@ public class CheckersGui extends JPanel implements ActionListener{
 			createPieces();
 		}
 		else if (e.getActionCommand().equals("Black")){
-			playerColor = 1;
 			computerColor = 2;
 			matrix = new Rules(1);
 			createPieces();
